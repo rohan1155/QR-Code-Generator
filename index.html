@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <p>Enter your text or URL</p>
+        <input type="text" placeholder="Text or URL" class="input">
+
+        <div class="img-box">
+            <img src="" class="img">
+        </div>
+
+        <button onclick="generateQR()">Generate QR Code</button>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+
+        let imgBox = document.querySelector(".img-box");
+        let img = document.querySelector(".img");
+        let QRinput = document.querySelector("input");
+
+        function generateQR() {
+            img.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + QRinput.value;
+        } 
+    </script>
+</body>
+
+</html>
